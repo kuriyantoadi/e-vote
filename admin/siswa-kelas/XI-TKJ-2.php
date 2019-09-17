@@ -5,7 +5,7 @@ if(!isset($_SESSION['id_admin'])) {
 ?>
 <div class="row">
    <div class="col-md-9 col-sm-9">
-      <h3>Daftar Siswa X TKJ 1</h3>
+      <h3>Daftar Siswa XI TKJ 2</h3>
    </div>
    <div class="col-md-3 col-sm-3" style="padding-top:10px;">
       <a class="btn btn-primary" href="?page=user&action=tambah">Tambah Siswa</a>
@@ -39,8 +39,11 @@ if(!isset($_SESSION['id_admin'])) {
 
                   //$sql = mysqli_query($con, "SELECT * FROM t_user JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas LIMIT $start,100");
                   //$sql = mysqli_query($con, "SELECT * FROM t_user JOIN t_kelas ON t_user.id_kelas WHERE 'K02' = t_kelas.id_kelas LIMIT $start,100");
-                  $sql = mysqli_query($con, "SELECT * FROM t_user  WHERE id_kelas='K01' ORDER BY fullname ASC ");
+                ///  $sql = mysqli_query($con, "SELECT * FROM t_user  WHERE id_kelas='K01' ORDER BY fullname ASC ");
 
+                  //$sql = mysqli_query($con, "SELECT * FROM t_user JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas LIMIT $start,100");
+                  //$sql = mysqli_query($con, "SELECT * FROM t_user JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas ");
+                  $sql = mysqli_query($con, "SELECT * FROM t_user  WHERE id_kelas='K04' ORDER BY fullname ASC ");
 
                   if (mysqli_num_rows($sql) > 0) {
 
@@ -61,14 +64,9 @@ if(!isset($_SESSION['id_admin'])) {
                               <?php echo $data['id_kelas']; ?>
                         </td>
                         <td style="text-align:center;vertical-align:middle;">
-                              <?php
-                              if($data['jk'] == 'L') {
-                                    echo 'Laki - laki';
-                              } else {
-                                    echo 'Perempuan';
-                              }
-                              ?>
+                            -
                         </td>
+
                         <td style="text-align:center;vertical-align:middle;">
                               <a href="?page=user&action=edit&id=<?php echo $data['id_user']; ?>" class="btn btn-warning btn-sm">
                               Edit

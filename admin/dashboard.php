@@ -102,30 +102,100 @@ include('../include/connection.php');
                 <a href="?page=perolehan"><i class="fa fa-bar-chart"></i> <span>Perolehan</span></a>
             </li>
 
-            <li <?php if (isset($_GET['page']) && $_GET['page'] == 'kelas 10 TKJ 1') { echo 'class="active"'; } ?>>
-                <a href="?page=10J1"><i class="fa fa-bar-chart"></i> <span>kelas 10 TKJ 1</span></a>
-            </li>
 
             <!-- Penambahan Submenu -->
+            <li class="header">Data Siswa</li>
             <li class="treeview">
               <a href="#">
                   <i class="fa fa-files-o"></i>
-                  <span>Daftar Kelas</span>
+                  <span>Data TKJ - RPL</span>
                   <span class="pull-right-container">
                       <span class="label label-primary pull-right"></span>
                   </span>
               </a>
               <ul class="treeview-menu">
-                <li <?php if (isset($_GET['page']) && $_GET['page'] == 'kelas 10 TKJ 1') { echo 'class="active"'; } ?>>
-                    <a href="?page=X-TKJ-1"><i class="fa fa-circle-o"></i> <span>kelas X TKJ 1</span></a>
-                </li>
-
-                  <li>
-                    <a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a>
-                  </li>
-
+              <?php
+                include ('menu/tkj-rpl.php');
+              ?>
               </ul>
-          </li>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                  <i class="fa fa-files-o"></i>
+                  <span>Data AK - APK</span>
+                  <span class="pull-right-container">
+                      <span class="label label-primary pull-right"></span>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+              <?php
+                include ('menu/ak-apk.php');
+              ?>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                  <i class="fa fa-files-o"></i>
+                  <span>Data Mesin - OTO</span>
+                  <span class="pull-right-container">
+                      <span class="label label-primary pull-right"></span>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+              <?php
+                include ('menu/mesin-oto.php');
+              ?>
+              </ul>
+            </li>
+
+            <!-- Penambahan Submenu -->
+            <li class="header">Data Pemilih</li>
+
+            <li class="treeview">
+              <a href="#">
+                  <i class="fa fa-files-o"></i>
+                  <span>Pemilih TKJ - RPL</span>
+                  <span class="pull-right-container">
+                      <span class="label label-primary pull-right"></span>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+                <!-- Kelas TKJ -->
+              <?php
+                include ('pemilih/tkj-rpl.php');
+              ?>
+              </ul>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                  <i class="fa fa-files-o"></i>
+                  <span>Pemilih AK - APK</span>
+                  <span class="pull-right-container">
+                      <span class="label label-primary pull-right"></span>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+              <?php
+                include ('pemilih/ak-apk.php');
+              ?>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                  <i class="fa fa-files-o"></i>
+                  <span>Pemilih Mesin - OTO</span>
+                  <span class="pull-right-container">
+                      <span class="label label-primary pull-right"></span>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+              <?php
+                include ('pemilih/mesin-oto.php');
+              ?>
+              </ul>
+            </li>
 
           </ul>
         </section>
@@ -162,6 +232,8 @@ include('../include/connection.php');
                   if(isset($_GET['page'])) {
                       switch ($_GET['page']) {
 
+                        //Daftar Siswa
+
                         // kelas TKJ
                         case 'X-TKJ-1':
                             include('./siswa-kelas/X-TKJ-1.php');
@@ -172,46 +244,263 @@ include('../include/connection.php');
                         case 'XI-TKJ-1':
                             include('./siswa-kelas/XI-TKJ-1.php');
                             break;
-                        case 'XI-TKJ-1':
+                        case 'XI-TKJ-2':
                             include('./siswa-kelas/XI-TKJ-2.php');
                             break;
                         case 'XII-TKJ-1':
                             include('./siswa-kelas/XII-TKJ-1.php');
                             break;
-                        case 'XII-TKJ-1':
+                        case 'XII-TKJ-2':
                             include('./siswa-kelas/XII-TKJ-2.php');
                             break;
 
-                        case 'X-TKJ-1':
-                            include('./siswa-kelas/X-TKJ-1.php');
+                        // Kelas RPL
+                        case 'X-RPL-1':
+                            include('./siswa-kelas/X-RPL-1.php');
                             break;
-                        case 'X-TKJ-1':
-                            include('./siswa-kelas/X-TKJ-1.php');
+                        case 'X-RPL-2':
+                            include('./siswa-kelas/X-RPL-2.php');
                             break;
-                        case 'X-TKJ-1':
-                            include('./siswa-kelas/X-TKJ-1.php');
+                        case 'XI-RPL-1':
+                            include('./siswa-kelas/XI-RPL-1.php');
                             break;
-                        case 'X-TKJ-1':
-                            include('./siswa-kelas/X-TKJ-1.php');
+                        case 'XI-RPL-2':
+                            include('./siswa-kelas/XI-RPL-2.php');
                             break;
-                        case 'X-TKJ-1':
-                            include('./siswa-kelas/X-TKJ-1.php');
+                        case 'XII-RPL-1':
+                            include('./siswa-kelas/XII-RPL-1.php');
                             break;
-                        case 'X-TKJ-1':
-                            include('./siswa-kelas/X-TKJ-1.php');
+                        case 'XII-RPL-2':
+                            include('./siswa-kelas/XII-RPL-2.php');
                             break;
-                        case 'X-TKJ-1':
-                            include('./siswa-kelas/X-TKJ-1.php');
+
+                        //AK
+                        case 'X-AK-1':
+                            include('./siswa-kelas/X-AK-1.php');
                             break;
-                        case 'X-TKJ-1':
-                            include('./siswa-kelas/X-TKJ-1.php');
+                        case 'X-AK-2':
+                            include('./siswa-kelas/X-AK-2.php');
                             break;
-                        case 'X-TKJ-1':
-                            include('./siswa-kelas/X-TKJ-1.php');
+                        case 'XI-AK-1':
+                            include('./siswa-kelas/XI-AK-1.php');
                             break;
-                        case 'X-TKJ-1':
-                            include('./siswa-kelas/X-TKJ-1.php');
+                        case 'XI-AK-2':
+                            include('./siswa-kelas/XI-AK-2.php');
                             break;
+                        case 'XII-AK-1':
+                            include('./siswa-kelas/XII-AK-1.php');
+                            break;
+                        case 'XII-AK-2':
+                            include('./siswa-kelas/XII-AK-2.php');
+                            break;
+
+                        //APK
+                        case 'X-APK-1':
+                            include('./siswa-kelas/X-APK-1.php');
+                            break;
+                        case 'X-APK-2':
+                            include('./siswa-kelas/X-APK-2.php');
+                            break;
+                        case 'XI-APK-1':
+                            include('./siswa-kelas/XI-APK-1.php');
+                            break;
+                        case 'XI-APK-2':
+                            include('./siswa-kelas/XI-APK-2.php');
+                            break;
+                        case 'XII-APK-1':
+                            include('./siswa-kelas/XII-APK-1.php');
+                            break;
+                        case 'XII-APK-2':
+                            include('./siswa-kelas/XII-APK-2.php');
+                            break;
+
+                        //OTO
+                        case 'X-OTO-1':
+                            include('./siswa-kelas/X-OTO-1.php');
+                            break;
+                        case 'X-OTO-2':
+                            include('./siswa-kelas/X-OTO-2.php');
+                            break;
+                        case 'XI-OTO-1':
+                            include('./siswa-kelas/XI-OTO-1.php');
+                            break;
+                        case 'XI-OTO-2':
+                            include('./siswa-kelas/XI-OTO-2.php');
+                            break;
+                        case 'XII-OTO-1':
+                            include('./siswa-kelas/XII-OTO-1.php');
+                            break;
+                        case 'XII-OTO-2':
+                            include('./siswa-kelas/XII-OTO-2.php');
+                            break;
+
+                        //MESIN
+                        case 'X-MESIN-1':
+                            include('./siswa-kelas/X-MESIN-1.php');
+                            break;
+                        case 'X-MESIN-2':
+                            include('./siswa-kelas/X-MESIN-2.php');
+                            break;
+                        case 'X-MESIN-3':
+                            include('./siswa-kelas/X-MESIN-3.php');
+                            break;
+                        case 'X-MESIN-4':
+                            include('./siswa-kelas/X-MESIN-4.php');
+                            break;
+                        case 'XI-MESIN-1':
+                            include('./siswa-kelas/XI-MESIN-1.php');
+                            break;
+                        case 'XI-MESIN-2':
+                            include('./siswa-kelas/XI-MESIN-2.php');
+                            break;
+                        case 'XI-MESIN-3':
+                            include('./siswa-kelas/XI-MESIN-3.php');
+                            break;
+                        case 'XII-MESIN-1':
+                            include('./siswa-kelas/XII-MESIN-1.php');
+                            break;
+                        case 'XII-MESIN-2':
+                            include('./siswa-kelas/XII-MESIN-2.php');
+                            break;
+                        case 'XII-MESIN-3':
+                            include('./siswa-kelas/XII-MESIN-3.php');
+                            break;
+
+
+                        //Siswa Pemilih
+
+                        // kelas TKJ
+                        case 'PIL-X-TKJ-1':
+                            include('./siswa-pemilih/X-TKJ-1.php');
+                            break;
+                        case 'PIL-X-TKJ-2':
+                            include('./siswa-pemilih/X-TKJ-2.php');
+                            break;
+                        case 'PIL-XI-TKJ-1':
+                            include('./siswa-pemilih/XI-TKJ-1.php');
+                            break;
+                        case 'PIL-XI-TKJ-2':
+                            include('./siswa-pemilih/XI-TKJ-2.php');
+                            break;
+                        case 'PIL-XII-TKJ-1':
+                            include('./siswa-pemilih/XII-TKJ-1.php');
+                            break;
+                        case 'PIL-XII-TKJ-2':
+                            include('./siswa-pemilih/XII-TKJ-2.php');
+                            break;
+
+                        // Kelas RPL
+                        case 'PIL-X-RPL-1':
+                            include('./siswa-pemilih/X-RPL-1.php');
+                            break;
+                        case 'PIL-X-RPL-2':
+                            include('./siswa-pemilih/X-RPL-2.php');
+                            break;
+                        case 'PIL-XI-RPL-1':
+                            include('./siswa-pemilih/XI-RPL-1.php');
+                            break;
+                        case 'PIL-XI-RPL-2':
+                            include('./siswa-pemilih/XI-RPL-2.php');
+                            break;
+                        case 'PIL-XII-RPL-1':
+                            include('./siswa-pemilih/XII-RPL-1.php');
+                            break;
+                        case 'PIL-XII-RPL-2':
+                            include('./siswa-pemilih/XII-RPL-2.php');
+                            break;
+
+                        //AK
+                        case 'PIL-X-AK-1':
+                            include('./siswa-pemilih/X-AK-1.php');
+                            break;
+                        case 'PIL-X-AK-2':
+                            include('./siswa-pemilih/X-AK-2.php');
+                            break;
+                        case 'PIL-XI-AK-1':
+                            include('./siswa-pemilih/XI-AK-1.php');
+                            break;
+                        case 'PIL-XI-AK-2':
+                            include('./siswa-pemilih/XI-AK-2.php');
+                            break;
+                        case 'PIL-XII-AK-1':
+                            include('./siswa-pemilih/XII-AK-1.php');
+                            break;
+                        case 'PIL-XII-AK-2':
+                            include('./siswa-pemilih/XII-AK-2.php');
+                            break;
+
+                        //APK
+                        case 'PIL-X-APK-1':
+                            include('./siswa-pemilih/X-APK-1.php');
+                            break;
+                        case 'PIL-X-APK-2':
+                            include('./siswa-pemilih/X-APK-2.php');
+                            break;
+                        case 'PIL-XI-APK-1':
+                            include('./siswa-pemilih/XI-APK-1.php');
+                            break;
+                        case 'PIL-XI-APK-2':
+                            include('./siswa-pemilih/XI-APK-2.php');
+                            break;
+                        case 'PIL-XII-APK-1':
+                            include('./siswa-pemilih/XII-APK-1.php');
+                            break;
+                        case 'PIL-XII-APK-2':
+                            include('./siswa-pemilih/XII-APK-2.php');
+                            break;
+
+                        //OTO
+                        case 'PIL-X-OTO-1':
+                            include('./siswa-pemilih/X-OTO-1.php');
+                            break;
+                        case 'PIL-X-OTO-2':
+                            include('./siswa-pemilih/X-OTO-2.php');
+                            break;
+                        case 'PIL-XI-OTO-1':
+                            include('./siswa-pemilih/XI-OTO-1.php');
+                            break;
+                        case 'PIL-PIL-XI-OTO-2':
+                            include('./siswa-pemilih/XI-OTO-2.php');
+                            break;
+                        case 'PIL-XII-OTO-1':
+                            include('./siswa-pemilih/XII-OTO-1.php');
+                            break;
+                        case 'PIL-XII-OTO-2':
+                            include('./siswa-pemilih/XII-OTO-2.php');
+                            break;
+
+                        //MESIN
+                        case 'PIL-X-MESIN-1':
+                            include('./siswa-pemilih/X-MESIN-1.php');
+                            break;
+                        case 'PIL-X-MESIN-2':
+                            include('./siswa-pemilih/X-MESIN-2.php');
+                            break;
+                        case 'PIL-X-MESIN-3':
+                            include('./siswa-pemilih/X-MESIN-3.php');
+                            break;
+                        case 'PIL-X-MESIN-4':
+                            include('./siswa-pemilih/X-MESIN-4.php');
+                            break;
+                        case 'PIL-XI-MESIN-1':
+                            include('./siswa-pemilih/XI-MESIN-1.php');
+                            break;
+                        case 'PIL-XI-MESIN-2':
+                            include('./siswa-pemilih/XI-MESIN-2.php');
+                            break;
+                        case 'PIL-XI-MESIN-3':
+                            include('./siswa-pemilih/XI-MESIN-3.php');
+                            break;
+                        case 'PIL-XII-MESIN-1':
+                            include('./siswa-pemilih/XII-MESIN-1.php');
+                            break;
+                        case 'PIL-XII-MESIN-2':
+                            include('./siswa-pemilih/XII-MESIN-2.php');
+                            break;
+                        case 'PIL-XII-MESIN-3':
+                            include('./siswa-pemilih/XII-MESIN-3.php');
+                            break;
+
 
                         case 'user':
                             include('./user/index.php');

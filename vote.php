@@ -47,8 +47,6 @@ if(!isset($_SESSION['siswa'])) {
          <?php
          require('./include/connection.php');
 
-        echo $nis 
-
          $thn     = date('Y');
          $dpn     = date('Y') + 1;
          $periode = $thn.'/'.$dpn;

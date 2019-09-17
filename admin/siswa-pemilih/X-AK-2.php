@@ -5,11 +5,9 @@ if(!isset($_SESSION['id_admin'])) {
 ?>
 <div class="row">
    <div class="col-md-9 col-sm-9">
-      <h3>Daftar Siswa XII TKJ 2</h3>
+      <h3>Daftar Siswa X AK 2 Sudah Memilih</h3>
    </div>
-   <div class="col-md-3 col-sm-3" style="padding-top:10px;">
-      <a class="btn btn-primary" href="?page=user&action=tambah">Tambah Siswa</a>
-   </div>
+
    <div style="clear:both"></div>
    <hr />
    <div class="col-md-10 col-sm-12">
@@ -17,11 +15,10 @@ if(!isset($_SESSION['id_admin'])) {
             <thead>
                   <tr>
                   <th style="text-align:center;">#</th>
-                  <th style="text-align:center;">NIS</th>
-                  <th style="text-align:center;">Nama Siswa</th>
-                  <th style="text-align:center">Kelas</th>
-                  <th width="130px" style="text-align:center;">Jenis Kelamin</th>
-                  <th width="200px" style="text-align:center;">Opsi</th>
+                  <th width="100px" style="text-align:center;">NIS</th>
+                  <th style="text-align:center">Nama Siswa</th>
+                  <th width="100px" style="text-align:center;">Kelas</th>
+                  <th style="text-align:center;">Sudah Memilih</th>
                   </tr>
             </thead>
             <tbody>
@@ -38,13 +35,9 @@ if(!isset($_SESSION['id_admin'])) {
                   $start  = ($hlm - 1) * 100;
 
                   //$sql = mysqli_query($con, "SELECT * FROM t_user JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas LIMIT $start,100");
-                  //$sql = mysqli_query($con, "SELECT * FROM t_user JOIN t_kelas ON t_user.id_kelas WHERE 'K02' = t_kelas.id_kelas LIMIT $start,100");
-                ///  $sql = mysqli_query($con, "SELECT * FROM t_user  WHERE id_kelas='K01' ORDER BY fullname ASC ");
-
-                  //$sql = mysqli_query($con, "SELECT * FROM t_user JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas LIMIT $start,100");
-                  //$sql = mysqli_query($con, "SELECT * FROM t_user JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas ");
-                  $sql = mysqli_query($con, "SELECT * FROM t_user  WHERE id_kelas='K06' ORDER BY fullname ASC ");
-
+                  //$sql = mysqli_query($con, "SELECT id_user,fullname,id_kelas FROM t_user INNER JOIN t_pemilih ON nis=id_user");
+                  //$sql = mysqli_query($con, "SELECT * FROM t_user  JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas JOIN t_pemilih ON nis=id_user");
+                  $sql = mysqli_query($con, " SELECT * FROM t_user inner JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas JOIN t_pemilih ON nis=id_user where t_user.id_kelas='K14'");
 
 
                   if (mysqli_num_rows($sql) > 0) {
@@ -56,26 +49,17 @@ if(!isset($_SESSION['id_admin'])) {
                         <td style="text-align:center;vertical-align:middle;">
                               <?php echo $no++; ?>
                         </td>
-                        <td style="padding-left:25px;vertical-align:middle;">
-                              <?php echo $data['id_user']; ?>
+                        <td style="text-align:center;vertical-align:middle;">
+                              <?php echo $data['id_user'] ?>
                         </td>
                         <td style="padding-left:25px;vertical-align:middle;">
                               <?php echo $data['fullname']; ?>
                         </td>
-                        <td style="text-align:center;vertical-align:middle;">
-                              <?php echo $data['id_kelas']; ?>
+                        <td style="padding-left:25px;vertical-align:middle;">
+                              <?php echo $data['nama_kelas']; ?>
                         </td>
                         <td style="text-align:center;vertical-align:middle;">
-                              -
-                        </td>
-
-                        <td style="text-align:center;vertical-align:middle;">
-                              <a href="?page=user&action=edit&id=<?php echo $data['id_user']; ?>" class="btn btn-warning btn-sm">
-                              Edit
-                              </a>
-                              <a href="?page=user&action=hapus&id=<?php echo $data['id_user']; ?>" onclick="return confirm('Yakin ingin menghapus user ini ?');" class="btn btn-danger btn-sm">
-                              Hapus
-                              </a>
+                            sudah memilih
                         </td>
                         </tr>
                         <?php
