@@ -459,7 +459,7 @@ include('../include/connection.php');
                         case 'PIL-XI-OTO-1':
                             include('./siswa-pemilih/XI-OTO-1.php');
                             break;
-                        case 'PIL-PIL-XI-OTO-2':
+                        case 'PIL-XI-OTO-2':
                             include('./siswa-pemilih/XI-OTO-2.php');
                             break;
                         case 'PIL-XII-OTO-1':
@@ -554,7 +554,7 @@ include('../include/connection.php');
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.3.6
         </div>
-        <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved. Powered by : <a href="https://kangjaz.com">Kangjaz.com</a>
+        <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved. Powered by :  Melati107</a>
       </footer>
 
     </div>

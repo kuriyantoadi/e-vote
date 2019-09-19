@@ -5,7 +5,7 @@ if(!isset($_SESSION['id_admin'])) {
 ?>
 <div class="row">
    <div class="col-md-9 col-sm-9">
-      <h3>Daftar Siswa XI OTO 1 Sudah Memilih</h3>
+      <h3>Daftar Siswa X TKJ 2 Sudah Memilih</h3>
    </div>
 
    <div style="clear:both"></div>
@@ -37,8 +37,7 @@ if(!isset($_SESSION['id_admin'])) {
                   //$sql = mysqli_query($con, "SELECT * FROM t_user JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas LIMIT $start,100");
                   //$sql = mysqli_query($con, "SELECT id_user,fullname,id_kelas FROM t_user INNER JOIN t_pemilih ON nis=id_user");
                   //$sql = mysqli_query($con, "SELECT * FROM t_user  JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas JOIN t_pemilih ON nis=id_user");
-                  $sql = mysqli_query($con, " SELECT * FROM t_user inner JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas
-                    JOIN t_pemilih ON nis=id_user where t_user.id_kelas='K37'");
+                  $sql = mysqli_query($con, " SELECT * FROM t_user inner JOIN t_kelas ON t_user.id_kelas = t_kelas.id_kelas JOIN t_pemilih ON nis=id_user where t_user.id_kelas='K02'");
 
 
                   if (mysqli_num_rows($sql) > 0) {

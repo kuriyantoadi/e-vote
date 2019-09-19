@@ -5,7 +5,7 @@ if(!isset($_SESSION['id_admin'])) {
 ?>
 <div class="row">
    <div class="col-md-9 col-sm-9">
-      <h3>Daftar Siswa XI OTO 2x Sudah Memilih</h3>
+      <h3>Daftar Siswa XI OTO 2 Sudah Memilih</h3>
    </div>
 
    <div style="clear:both"></div>

@@ -97,7 +97,7 @@ if (isset($_POST['submit'])) {
                         ?>
 
                               <footer>
-                                    <?php echo date('Y'); ?> &copy; <a href="kangjaz.com">Kangjaz.com</a>
+                                    <?php echo date('Y'); ?> &copy; melati107</a>
                               </footer>
                         </div>
                   </div>
